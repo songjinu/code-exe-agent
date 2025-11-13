@@ -1,3 +1,4 @@
+```mermaid
 flowchart LR
     %% ===== 스타일 정의 =====
     classDef node fill:#f9f9f9,stroke:#333,stroke-width:1px,rx:8px,ry:8px
