@@ -1,0 +1,54 @@
+# {{ category.name | title }}
+
+{{ category.description }}
+
+## 개요
+
+이 디렉토리는 {{ category.description }}을(를) 위한 도구들을 포함합니다.
+
+## 사용 가능한 도구
+
+{% for tool in category.tools %}
+### `{{ tool.get_simple_name() }}`
+
+{{ tool.description }}
+
+```typescript
+import { {{ tool.get_simple_name() }} } from './{{ tool.get_simple_name() }}';
+
+// TODO: 사용 예시
+```
+
+---
+{% endfor %}
+
+## 일반적인 사용 사례
+
+{% if category.name == 'accounts' %}
+- 신규 계정 생성
+- 기존 계정 정보 업데이트
+- 계정 검색 및 조회
+- 계정 삭제
+{% elif category.name == 'documents' %}
+- 새 문서 생성
+- 기존 문서 읽기 및 편집
+- 문서 내보내기 (PDF, DOCX 등)
+- 문서 검색
+{% elif category.name == 'spreadsheets' %}
+- 스프레드시트 생성
+- 셀 데이터 읽기/쓰기
+- 범위 업데이트
+- 수식 계산
+{% else %}
+- {{ category.description }} 관련 작업
+{% endif %}
+
+## 키워드
+
+{{ category.keywords | join(', ') }}
+
+## 메타데이터
+
+- **카테고리**: {{ category.name }}
+- **도구 개수**: {{ category.tools | length }}
+- **생성일**: {{ generation_date }}

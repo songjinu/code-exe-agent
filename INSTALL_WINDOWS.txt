@@ -1,0 +1,42 @@
+# 🎯 Windows에서 설치하기
+
+## 빠른 시작
+
+### 1. 프로젝트를 원하는 위치로 이동
+
+예: `D:\jinu\work\codeExAgent`
+
+```cmd
+REM D:\jinu\work 폴더가 없으면 생성
+mkdir D:\jinu\work
+
+REM codeExAgent 폴더를 이동
+move codeExAgent D:\jinu\work\
+```
+
+### 2. 자동 설치
+
+```cmd
+cd D:\jinu\work\codeExAgent
+scripts\windows\setup.bat
+```
+
+### 3. 실행
+
+```cmd
+scripts\windows\quick-generate.bat
+```
+
+## 📚 상세 가이드
+
+- [설치 가이드](docs/windows/INSTALL.md) - 자세한 설치 방법
+- [시작 가이드](docs/windows/START_HERE.md) - 사용 시작
+- [README.md](README.md) - 프로젝트 개요
+
+## ⚡ 한 줄 요약
+
+```cmd
+cd D:\jinu\work\codeExAgent && scripts\windows\setup.bat && scripts\windows\quick-generate.bat
+```
+
+완료! 🎉

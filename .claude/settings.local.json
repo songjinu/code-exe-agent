@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m pip:*)",
+      "Bash(findstr:*)",
+      "Bash(uv --version:*)",
+      "Bash(uv venv:*)",
+      "Bash(uv sync:*)",
+      "Bash(del uv.lock)",
+      "Bash(.venvScriptspython.exe main.py generate --config config/mcp_servers.json)",
+      "Bash(.venv/Scripts/python.exe:*)",
+      "Bash(set PYTHONIOENCODING=utf-8)",
+      "Bash(chcp 65001:*)",
+      "Bash(cmd /c \"chcp 65001 >nul && set PYTHONIOENCODING=utf-8 && .venv\\Scripts\\python.exe main.py generate\")",
+      "Bash(run.bat main.py generate)",
+      "Bash(chmod:*)",
+      "Bash(cat:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

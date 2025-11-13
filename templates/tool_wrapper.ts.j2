@@ -1,0 +1,60 @@
+/**
+ * {{ tool.description }}
+ *
+ * Server: {{ server_name }}
+ * Category: {{ category_name }}
+ * Tool: {{ tool.name }}
+ */
+
+import { callMCPTool } from '../../../lib/mcp-client';
+
+interface {{ function_name|title }}Params {
+  {% if input_schema and input_schema.properties -%}
+  {% for prop_name, prop_info in input_schema.properties.items() -%}
+  {{ prop_name }}{% if prop_name not in input_schema.get('required', []) %}?{% endif %}: {{ prop_info.type|ts_type }};
+  {% if prop_info.description %}  // {{ prop_info.description }}{% endif %}
+  {% endfor -%}
+  {% else -%}
+  [key: string]: any;
+  {% endif -%}
+}
+
+interface {{ function_name|title }}Result {
+  success: boolean;
+  data?: any;
+  error?: string;
+}
+
+/**
+ * {{ tool.description }}
+ *
+ * @param params - Parameters for the tool
+ * @returns Result of the tool execution
+ *
+ * @example
+ * {{ example_usage }}
+ */
+export async function {{ function_name }}(
+  params: {{ function_name|title }}Params
+): Promise<{{ function_name|title }}Result> {
+  try {
+    const result = await callMCPTool(
+      '{{ server_name }}',
+      '{{ tool.name }}',
+      params
+    );
+
+    return {
+      success: true,
+      data: result
+    };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : String(error)
+    };
+  }
+}
+
+// Re-export for convenience
+export default {{ function_name }};

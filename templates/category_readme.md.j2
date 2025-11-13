@@ -1,0 +1,33 @@
+# {{ category.name }}
+
+{{ category.description }}
+
+## 도구 목록
+
+{% for tool in category.tools -%}
+### `{{ tool.get_simple_name() }}`
+
+{{ tool.description }}
+
+**전체 이름**: `{{ tool.name }}`
+
+{% if tool.input_schema and tool.input_schema.properties %}
+**파라미터**:
+{% for param_name, param_info in tool.input_schema.properties.items() %}
+- `{{ param_name }}`{% if param_name in tool.input_schema.get('required', []) %} (required){% endif %}: {{ param_info.type }}
+  {% if param_info.description %}- {{ param_info.description }}{% endif %}
+{% endfor %}
+{% endif %}
+
+---
+
+{% endfor %}
+
+## 키워드
+
+{{ ', '.join(category.keywords) }}
+
+## 메타데이터
+
+- **생성일**: {{ generation_date }}
+- **도구 개수**: {{ category.tools|length }}

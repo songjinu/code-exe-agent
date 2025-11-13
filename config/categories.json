@@ -1,0 +1,95 @@
+{
+  "category_rules": {
+    "patterns": [
+      {
+        "pattern": "__(account|accounts)__",
+        "category": "accounts",
+        "description": "계정 관리",
+        "keywords": ["account", "계정", "customer", "고객"]
+      },
+      {
+        "pattern": "__(opportunity|opportunities)__",
+        "category": "opportunities",
+        "description": "영업 기회 관리",
+        "keywords": ["opportunity", "기회", "sales", "영업", "deal"]
+      },
+      {
+        "pattern": "__(contact|contacts)__",
+        "category": "contacts",
+        "description": "연락처 관리",
+        "keywords": ["contact", "연락처", "person"]
+      },
+      {
+        "pattern": "__(case|cases)__",
+        "category": "cases",
+        "description": "케이스 관리",
+        "keywords": ["case", "케이스", "support", "지원", "ticket"]
+      },
+      {
+        "pattern": "__(report|reports)__",
+        "category": "reports",
+        "description": "리포트 생성",
+        "keywords": ["report", "리포트", "분석", "analytics"]
+      },
+      {
+        "pattern": "__(analytics|dashboard)__",
+        "category": "analytics",
+        "description": "분석 및 대시보드",
+        "keywords": ["analytics", "분석", "dashboard", "대시보드", "metrics"]
+      },
+      {
+        "pattern": "__(document|doc|documents)__",
+        "category": "documents",
+        "description": "문서 관리",
+        "keywords": ["document", "문서", "doc", "text"]
+      },
+      {
+        "pattern": "__(spreadsheet|sheet|sheets)__",
+        "category": "spreadsheets",
+        "description": "스프레드시트 관리",
+        "keywords": ["spreadsheet", "스프레드시트", "sheet", "excel"]
+      },
+      {
+        "pattern": "__(presentation|slide|slides)__",
+        "category": "presentations",
+        "description": "프레젠테이션 관리",
+        "keywords": ["presentation", "프레젠테이션", "slide", "슬라이드"]
+      },
+      {
+        "pattern": "__(folder|folders|directory)__",
+        "category": "folders",
+        "description": "폴더 관리",
+        "keywords": ["folder", "폴더", "directory", "디렉토리"]
+      },
+      {
+        "pattern": "__(permission|permissions|share|sharing)__",
+        "category": "permissions",
+        "description": "권한 및 공유 관리",
+        "keywords": ["permission", "권한", "share", "공유", "access"]
+      },
+      {
+        "pattern": "__(search|find|query)__",
+        "category": "search",
+        "description": "검색",
+        "keywords": ["search", "검색", "find", "찾기", "query"]
+      },
+      {
+        "pattern": "__(file|files)__",
+        "category": "files",
+        "description": "파일 관리",
+        "keywords": ["file", "파일"]
+      }
+    ],
+    "default_category": "general",
+    "action_keywords": {
+      "create": ["create", "new", "add", "생성", "추가"],
+      "read": ["read", "get", "fetch", "retrieve", "조회", "가져오기"],
+      "update": ["update", "modify", "edit", "change", "수정", "변경"],
+      "delete": ["delete", "remove", "삭제", "제거"],
+      "list": ["list", "all", "목록"],
+      "search": ["search", "find", "query", "검색"],
+      "export": ["export", "download", "내보내기"],
+      "import": ["import", "upload", "가져오기"]
+    }
+  }
+}

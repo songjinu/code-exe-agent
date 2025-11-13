@@ -1,0 +1,42 @@
+/**
+ * {{ tool.description }}
+ * 
+ * Generated from MCP tool: {{ tool.name }}
+ * Server: {{ server_name }}
+ * Category: {{ category_name }}
+ */
+
+{% if input_schema %}
+interface {{ function_name | title }}Input {
+  {% for prop_name, prop_info in input_schema.properties.items() %}
+  {{ prop_name }}{% if prop_name not in input_schema.required | default([]) %}?{% endif %}: {{ prop_info.type | ts_type }};  // {{ prop_info.description | default('') }}
+  {% endfor %}
+}
+{% else %}
+interface {{ function_name | title }}Input {
+  [key: string]: any;
+}
+{% endif %}
+
+interface {{ function_name | title }}Response {
+  [key: string]: any;
+}
+
+/**
+ * {{ tool.description }}
+ {% if example_usage %}
+ * 
+ * Example:
+ * ```typescript
+ * {{ example_usage }}
+ * ```
+ {% endif %}
+ */
+export async function {{ function_name }}(
+  input: {{ function_name | title }}Input
+): Promise<{{ function_name | title }}Response> {
+  return callMCPTool<{{ function_name | title }}Response>(
+    '{{ tool.name }}',
+    input
+  );
+}

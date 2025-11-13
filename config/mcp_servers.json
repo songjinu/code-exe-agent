@@ -1,0 +1,66 @@
+{
+  "servers": [
+    {
+      "name": "filesystem",
+      "description": "File system operations",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/tmp"]
+    },
+    {
+      "name": "google-drive",
+      "description": "Google Drive integration",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-gdrive"]
+    },
+    {
+      "name": "github",
+      "description": "GitHub operations",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      }
+    }
+  ],
+  "mock_mode": true,
+  "mock_servers": {
+    "salesforce": {
+      "tools": [
+        {"name": "salesforce__account__create", "description": "Create a new Salesforce account"},
+        {"name": "salesforce__account__update", "description": "Update an existing account"},
+        {"name": "salesforce__account__delete", "description": "Delete an account"},
+        {"name": "salesforce__account__query", "description": "Query accounts"},
+        {"name": "salesforce__opportunity__create", "description": "Create a new opportunity"},
+        {"name": "salesforce__opportunity__update", "description": "Update an opportunity"},
+        {"name": "salesforce__opportunity__close", "description": "Close an opportunity"},
+        {"name": "salesforce__contact__create", "description": "Create a new contact"},
+        {"name": "salesforce__contact__update", "description": "Update a contact"},
+        {"name": "salesforce__contact__merge", "description": "Merge duplicate contacts"},
+        {"name": "salesforce__case__create", "description": "Create a support case"},
+        {"name": "salesforce__case__update", "description": "Update a case"},
+        {"name": "salesforce__case__close", "description": "Close a case"},
+        {"name": "salesforce__report__sales", "description": "Generate sales report"},
+        {"name": "salesforce__report__activity", "description": "Generate activity report"},
+        {"name": "salesforce__analytics__dashboard", "description": "Get analytics dashboard data"}
+      ]
+    },
+    "google-drive": {
+      "tools": [
+        {"name": "gdrive__document__create", "description": "Create a new Google Doc"},
+        {"name": "gdrive__document__read", "description": "Read a Google Doc"},
+        {"name": "gdrive__document__update", "description": "Update a Google Doc"},
+        {"name": "gdrive__document__export", "description": "Export Google Doc to PDF/DOCX"},
+        {"name": "gdrive__spreadsheet__create", "description": "Create a new spreadsheet"},
+        {"name": "gdrive__spreadsheet__read", "description": "Read spreadsheet data"},
+        {"name": "gdrive__spreadsheet__update_cell", "description": "Update a single cell"},
+        {"name": "gdrive__spreadsheet__update_range", "description": "Update a range of cells"},
+        {"name": "gdrive__folder__create", "description": "Create a folder"},
+        {"name": "gdrive__folder__list", "description": "List folder contents"},
+        {"name": "gdrive__permission__grant", "description": "Grant access permission"},
+        {"name": "gdrive__permission__revoke", "description": "Revoke access permission"},
+        {"name": "gdrive__search__by_name", "description": "Search files by name"},
+        {"name": "gdrive__search__by_type", "description": "Search files by type"}
+      ]
+    }
+  }
+}
